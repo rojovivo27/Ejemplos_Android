@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Ejemplos</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="button_login_text">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="logo_description">Enterprise Logo</string>
+    <string name="required_field_error">Field Required</string>
+    <string name="login_success">Login Success</string>
+    <string name="login_failure">Login Failure</string>
+
 </resources>

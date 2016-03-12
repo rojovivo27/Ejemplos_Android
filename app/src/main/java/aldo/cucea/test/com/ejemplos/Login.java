@@ -1,5 +1,6 @@
 package aldo.cucea.test.com.ejemplos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,9 @@ public class Login extends AppCompatActivity {
     private EditText txtPassword;
     private Button btnLogin;
 
+    private String user,pass;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,25 +33,35 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = txtUser.getText().toString();
-                String pass = txtPassword.getText().toString();
+                user = txtUser.getText().toString();
+                pass = txtPassword.getText().toString();
 
-                if(user.equalsIgnoreCase("")){
-                    txtUser.setError("Este campo es necesario");
-                    txtUser.requestFocus();
-                }
-
-                if(pass.equalsIgnoreCase("")){
-                    txtPassword.setError("Este campo es necesario");
-                    txtPassword.requestFocus();
-                }
-
-                if(user.equalsIgnoreCase("aldo") && pass.equalsIgnoreCase("aldo")){
-                    Toast.makeText(Login.this,"A huevo!", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(Login.this,"Pelas :(", Toast.LENGTH_LONG).show();
+                if(Validation()) {
+                    if (user.equalsIgnoreCase("aldo") && pass.equalsIgnoreCase("aldo")) {
+                        Toast.makeText(Login.this, getString(R.string.login_success), Toast.LENGTH_LONG).show();
+                        Intent goToList = new Intent(Login.this, List.class);
+                        startActivity(goToList);
+                    } else {
+                        Toast.makeText(Login.this, getString(R.string.login_failure), Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
+    }
+
+    private boolean Validation(){
+        boolean success = true;
+        if(user.equalsIgnoreCase("")){
+            txtUser.setError(getString(R.string.required_field_error));
+            txtUser.requestFocus();
+            success = false;
+        }
+
+        if(pass.equalsIgnoreCase("")){
+            txtPassword.setError(getString(R.string.required_field_error));
+            txtPassword.requestFocus();
+            success = false;
+        }
+        return success;
     }
 }

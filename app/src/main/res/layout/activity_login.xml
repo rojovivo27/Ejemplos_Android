@@ -11,13 +11,14 @@
         android:layout_height="200dp"
         android:id="@+id/logo"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/movilidad"/>
+        android:src="@drawable/movilidad"
+        android:contentDescription="@string/logo_description"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtUser"
-        android:hint="e-mail"
+        android:hint="@string/username"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:id="@+id/txtPassword"
-        android:hint="password"
+        android:hint="@string/password"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -39,7 +40,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/button_login_text"
         android:id="@+id/btnLogin"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
@@ -51,7 +52,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         android:gravity="center"
         android:padding="12dp"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
