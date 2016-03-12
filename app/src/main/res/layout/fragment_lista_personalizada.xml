@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="aldo.cucea.test.com.ejemplos.fragments.List"
-        android:id="@+id/fragmentList"
-        tools:layout="@layout/fragment_list">
-    </fragment>
+        android:id="@+id/listaPersonalizada">
+
+    </ListView>
 
 </LinearLayout>

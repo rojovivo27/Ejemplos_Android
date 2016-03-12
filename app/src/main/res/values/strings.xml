@@ -10,4 +10,13 @@
     <string name="login_success">Login Success</string>
     <string name="login_failure">Login Failure</string>
 
+    <string-array name="opciones">
+        <item>Custom List</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+        <item>Option 4</item>
+        <item>Option 5</item>
+        <item>Option 6</item>
+    </string-array>
+
 </resources>
