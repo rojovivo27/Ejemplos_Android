@@ -1,5 +1,6 @@
 package aldo.cucea.test.com.ejemplos.fragments;
 
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,14 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+
 import aldo.cucea.test.com.ejemplos.R;
-import aldo.cucea.test.com.ejemplos.adapters.CustomListAdapter;
+import aldo.cucea.test.com.ejemplos.adapters.CustomListAdapterViewHolder;
 import aldo.cucea.test.com.ejemplos.models.Car;
 
 /**
- * Created by Titanium on 12/03/16.
+ * Created by Titanium on 09/04/16.
  */
-public class CustomList extends Fragment {
+public class CustomList2 extends Fragment {
 
     private ListView lista;
     private Car[] carros = new Car[]{
@@ -25,15 +27,14 @@ public class CustomList extends Fragment {
             new Car(R.drawable.mercedes, 4, "Mercedez","Elegancia"),
             new Car(R.drawable.range, 5, "Range","Fuerza"),
     };
-
-    private CustomListAdapter adapter;
+    private CustomListAdapterViewHolder adapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_lista_personalizada, container, false);
-        lista = (ListView) v.findViewById(R.id.listaPersonalizada);
-        adapter = new CustomListAdapter(getContext(),carros);
+        lista = (ListView) v.findViewById((R.id.listaPersonalizada));
+        adapter = new CustomListAdapterViewHolder(getContext(),carros);
         lista.setAdapter(adapter);
         return v;
     }
