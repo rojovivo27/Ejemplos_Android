@@ -17,12 +17,13 @@ public class JSONParser {
         try {
             JSONObject object = new JSONObject(JSONStr);
             JSONArray results = object.getJSONArray("results");
+            String basePath = "http://image.tmdb.org/t/p/w500/";
             for (int i = 0; i<results.length(); i++){
                 JSONObject obj = results.getJSONObject(i);
                 Movie movie = new Movie(
                         obj.getString("original_title"),
                         obj.getString("overview"),
-                        obj.getString("poster_path"),
+                        basePath + obj.getString("poster_path"),
                         obj.getString("backdrop_path"),
                         obj.getDouble("popularity"),
                         obj.getDouble("vote_average")

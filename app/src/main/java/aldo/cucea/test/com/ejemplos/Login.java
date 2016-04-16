@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
                 pass = txtPassword.getText().toString();
 
                 if(Validation()) {
-                    if (user.equalsIgnoreCase("aldo") && pass.equalsIgnoreCase("aldo")) {
+                    if (user.equalsIgnoreCase("1") && pass.equalsIgnoreCase("1")) {
                         Toast.makeText(Login.this, getString(R.string.login_success), Toast.LENGTH_LONG).show();
                         Intent goToList = new Intent(Login.this, List.class);
                         startActivity(goToList);

@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import aldo.cucea.test.com.ejemplos.R;
@@ -22,7 +24,7 @@ public class MovieAdapter extends ArrayAdapter<List<Movie>> {
     private Context context;
 
     public MovieAdapter(Context context, List<Movie> objects) {
-        super(context, R.layout.item_list);
+        super(context, R.layout.item_poster_list);
         this.context = context;
         lista = objects;
     }
@@ -37,7 +39,7 @@ public class MovieAdapter extends ArrayAdapter<List<Movie>> {
         ViewHolder holder;
         if(convertView == null){
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.item_list, null);
+            convertView = inflater.inflate(R.layout.item_poster_list, null);
 
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
@@ -46,15 +48,23 @@ public class MovieAdapter extends ArrayAdapter<List<Movie>> {
         }
 
         holder.titleMovie.setText(lista.get(position).getTitle());
+        Picasso.with(context)
+                .load(lista.get(position).getPoster())
+                .placeholder(R.mipmap.ic_launcher)
+                .into(holder.posterMovie);
 
         return convertView;
     }
 
     static class ViewHolder {
         final private TextView titleMovie;
+        final private ImageView posterMovie;
 
         public ViewHolder(View v){
+
             titleMovie = (TextView)v.findViewById(R.id.titleMovie);
+            posterMovie = (ImageView) v.findViewById(R.id.posterMovie);
+
         }
     }
 }

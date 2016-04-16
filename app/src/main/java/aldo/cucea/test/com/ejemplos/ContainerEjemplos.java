@@ -7,6 +7,7 @@ import android.util.Log;
 import aldo.cucea.test.com.ejemplos.fragments.CustomList;
 import aldo.cucea.test.com.ejemplos.fragments.CustomList2;
 import aldo.cucea.test.com.ejemplos.fragments.MovieFragment;
+import aldo.cucea.test.com.ejemplos.fragments.MovieFragmentRecycler;
 
 /**
  * Created by Titanium on 12/03/16.
@@ -24,6 +25,8 @@ public class ContainerEjemplos extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.containerFragmentEjemplos, new CustomList2()).commit();
         } else if (pos == 2 ) {    // Movies fragment
             getSupportFragmentManager().beginTransaction().replace(R.id.containerFragmentEjemplos, new MovieFragment()).commit();
+        } else if (pos == 3 ) {    // Movies fragment
+            getSupportFragmentManager().beginTransaction().replace(R.id.containerFragmentEjemplos, new MovieFragmentRecycler()).commit();
         }
         //savedInstanceState.getInt("numeroEjemplo");
         Log.wtf("ContainerEjemplos", "Posición: " + pos);
